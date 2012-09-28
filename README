@@ -1,0 +1,20 @@
+Automatically abbreviating names of all the different things that are
+displayed on a map is much easier with names spelt out in full in the
+input data, than expanding those names if they were provided in an
+abbreviated form.  This is basically why OpenStreetMap raw data contains
+mostly full names even if they're rarely / never written that way,
+and only pronounced that way.  Expansion may be ambiguous so there's
+no good way of automating it, especially taking l10n into account.
+
+However when rendering graphical maps it may be useful to still show
+abbreviated names, particularly in places and scales where the
+map is crowded with labels.  So the code to do that abbreviation
+automatically needs to be part of the rendering toolchain.  That
+code may still be useful in other projects, so it is abstracted out
+here as small set of C functions that can hopefully be re-used.
+
+It focuses on the type of names that are seen in cartography and
+trying to expand it to cover other common abbreviations may make
+it either much more complex, or more false-positives prone.  So
+perhaps it's better for it to stay focused on this one task,
+which it turns out isn't completely trivial.
