@@ -72,6 +72,9 @@ static const wchar_t *abbrevs[] = {
     L"świętego", L"św.",
     L"świętej", L"św.",
     L"świętych", L"św.",
+    L"błogosławionego", L"bł.",
+    L"błogosławionej", L"bł.",
+    L"błogosławionych", L"bł.",
     L"kościół", L"kościół",
     L"szkoła podstawowa", L"SP",
     L"liceum ogólnokształcące", L"LO",
@@ -84,15 +87,18 @@ static const wchar_t *abbrevs[] = {
     L"pod wezwaniem", L"pw.",
     L"matki boskiej", L"MB",
     L"najświętszej maryi panny", L"NMP",
+    L"kanał", L"kan.",
+    L"góra", L"g.",
     L"dworzec", L"dworzec",
     L"stacja", L"stacja",
+    /* TODO: when skipping "nad" (or German "am") skip until end of string */
     L"nad", L"n.",
-    L"główny", L"gł."
-    L"główna", L"gł."
-    L"wschodni", L"wsch."
-    L"wschodnia", L"wsch."
-    L"zachodni", L"zach."
-    L"zachodnia", L"zach."
+    L"główny", L"gł.",
+    L"główna", L"gł.", /* TODO: don't touch if first word */
+    L"wschodni", L"wsch.",
+    L"wschodnia", L"wsch.", /* TODO: don't touch if first word */
+    L"zachodni", L"zach.",
+    L"zachodnia", L"zach.", /* TODO: don't touch if first word */
     L"pierwszy", L"I",
     L"pierwsza", L"I",
     L"pierwsze", L"I",
@@ -112,13 +118,13 @@ static const wchar_t *abbrevs[] = {
     L"śląska", L"śl.",
     L"śląskie", L"śl.",
     L"pomorski", L"pom.",
-    L"pomorska", L"pom.",
+    L"pomorska", L"pom.", /* TODO: don't touch if first word */
     L"pomorskie", L"pom.",
     L"górny", L"g.",
-    L"górna", L"g.",
+    L"górna", L"g.", /* TODO: don't touch if first word */
     L"górne", L"g.",
     L"dolny", L"d.",
-    L"dolna", L"d.",
+    L"dolna", L"d.", /* TODO: don't touch if first word */
     L"dolne", L"d.",
     L"kolonia", L"kol.",
     L"miasto stołeczne", L"m.st.",
@@ -129,6 +135,7 @@ static const wchar_t *abbrevs[] = {
     L"robotnicze ogródki działkowe", L"ROD",
     L"narodowy fundusz zdrowia", L"NFZ",
     L"spółdzielnia mieszkaniowa", L"SM",
+    L"osiedle", L"os.",
     /* TODO: phrases below this line can not be omitted from the shortest
      * form, we need to account for this eventually.  Fortunately they usually
      * come at the end of a name.  */
@@ -146,6 +153,7 @@ static const wchar_t *abbrevs[] = {
     L"gminny ośrodek sportu i rekreacji", L"GOSiR",
     L"miejski ośrodek sportu i rekreacji", L"MOSiR",
     L"ośrodek sportu i rekreacji", L"OSiR",
+    L"wojsk ochrony pogranicza", L"WOP",
 
     /* English */
     L"north", L"n",
@@ -226,7 +234,9 @@ static const wchar_t *abbrevs[] = {
     /* German */
     /* TODO: German needs special treatment because the sub-words, in
      * a word formed by concatenation, can be abbreviated individually.  */
+    L"straße", L"str.",
     L"strasse", L"str.",
+    L"weg", L"weg",
     L"hauptbanhof", L"hbf",
 
     /* Russian & Ukrainian */
