@@ -67,6 +67,7 @@ static const wchar_t *abbrevs[] = {
     L"kapitana", L"kpt.",
     L"porucznika", L"por.",
     L"pułkownika", L"płk.",
+    L"majora", L"maj.",
     L"imienia", L"im.",
     L"numer", L"nr",
     L"świętego", L"św.",
