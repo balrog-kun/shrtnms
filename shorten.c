@@ -136,12 +136,6 @@ static const wchar_t *abbrevs[] = {
     /* TODO: phrases below this line can not be omitted from the shortest
      * form, we need to account for this eventually.  Fortunately they usually
      * come at the end of a name.  */
-    L"świętego", L"św.",
-    L"świętej", L"św.",
-    L"świętych", L"św.",
-    L"błogosławionego", L"bł.",
-    L"błogosławionej", L"bł.",
-    L"błogosławionych", L"bł.",
     L"komisji edukacji narodowej", L"KEN",
     L"polskiego czerwonego krzyża", L"PCK",
     L"armii krajowej", L"AK",
@@ -159,6 +153,12 @@ static const wchar_t *abbrevs[] = {
     L"wojsk ochrony pogranicza", L"WOP",
     L"jana iii sobieskiego", L"Sobieskiego",
     L"jana pawła", L"JP",
+    L"świętego", L"św.",
+    L"świętej", L"św.",
+    L"świętych", L"św.",
+    L"błogosławionego", L"bł.",
+    L"błogosławionej", L"bł.",
+    L"błogosławionych", L"bł.",
 
     /* English */
     L"north", L"n",
