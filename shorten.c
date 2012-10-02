@@ -215,7 +215,7 @@ static const wchar_t *abbrevs[] = {
     L"avenida", L"avda.", /* "Av." in some countries */
     L"plaza", L"pza.", /* XXX: sometimes "Pl"? */
     L"cuesta", L"cuesta",
-    L"paseo", L"pP",
+    L"paseo", L"pº",
     L"ronda", L"rda.",
     L"autovía", L"autovía",
     L"autopista", L"autopista",
