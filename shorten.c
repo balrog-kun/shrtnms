@@ -212,16 +212,37 @@ static const wchar_t *abbrevs[] = {
 
     /* Spanish */
     L"calle", L"c.",
-    L"avenida", L"av.",
+    L"avenida", L"avda.", /* "Av." in some countries */
+    L"plaza", L"pza.", /* XXX: sometimes "Pl"? */
     L"cuesta", L"cuesta",
-    L"paseo", L"paseo",
-    L"autovía", L"autovia",
+    L"paseo", L"pP",
+    L"ronda", L"rda.",
+    L"autovía", L"autovía",
     L"autopista", L"autopista",
+    L"víal", L"víal",
+    L"glorieta", L"gta.",
+    L"puerta", L"pta.",
+    L"carretera", L"ctra.",
+    L"playa", L"playa",
+    L"polideportivo", L"polideportivo",
+    L"polígono industrial", L"pol. ind.",
+    L"urbanización", L"urbanización",
+    L"barrio", L"barrio", /* XXX: sometimes "B."? */
+    L"parque", L"parque", /* XXX: sometimes "P." or "Pque."? */
+    L"ciudad", L"ciudad", /* XXX: sometimes "Cdad."? */
+    L"colonia", L"colonia", /* XXX: sometimes "Col."? */
     L"del", L"",
     L"de", L"",
     L"el", L"",
     L"la", L"",
     L"los", L"",
+    L"doctor", L"dr",
+    L"doctora", L"dra",
+    L"poeta", L"poeta",
+    L"cura", L"cura",
+    L"obispo", L"obispo",
+    /* TODO: phrases below this line can not be omitted from the shortest
+     * form, we need to account for this eventually.  */
     L"instituto de educación secundaria", L"IES",
     L"instituto educación secundaria", L"IES",
     L"colegio de educación infantil y primaria", L"CEIP",
@@ -230,11 +251,7 @@ static const wchar_t *abbrevs[] = {
     L"colegio público educación infantil y primaria", L"CEIP",
     L"colegio público de educación primaria e infantil", L"CEIP",
     L"colegio público educación primaria e infantil", L"CEIP",
-    L"doctor", L"dr",
-    L"doctora", L"dra",
-    L"poeta", L"poeta",
-    L"cura", L"cura",
-    L"obispo", L"obispo",
+    L"buen retiro", L"retiro",
 
     /* German */
     /* TODO: German needs special treatment because the sub-words, in
