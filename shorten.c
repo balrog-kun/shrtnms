@@ -153,6 +153,8 @@ static const wchar_t *abbrevs[] = {
     L"wojsk ochrony pogranicza", L"WOP",
     L"jana iii sobieskiego", L"Sobieskiego",
     L"jana pawła", L"JP",
+    L"urząd pocztowy", L"UP",
+    L"poczta", L"UP",
     L"świętego", L"św.",
     L"świętej", L"św.",
     L"świętych", L"św.",
@@ -176,7 +178,11 @@ static const wchar_t *abbrevs[] = {
     L"avenue", L"ave",
     L"boulevard", L"blvd",
     L"court", L"ct",
+    L"road", L"rd",
     L"alley", L"aly",
+    L"crescent", L"cres",
+    L"creek", L"cr",
+    L"crest", L"crst",
     L"drive", L"dr",
     L"doctor", L"dr.",
     L"junior", L"jr.",
@@ -185,13 +191,19 @@ static const wchar_t *abbrevs[] = {
     L"route", L"rt",
     L"circle", L"cir",
     L"expressway", L"expy",
-    L"loop", L"loop",
+    L"loop", L"lp",
     L"parkway", L"pkwy",
+    L"peak", L"peak",
+    L"pike", L"pike",
     L"national forest service", L"NFS",
+    L"bureau of indian affairs", L"BIA",
+    L"bureau of land management", L"BLM",
     L"national", L"nat",
     L"railroad", L"RR",
     L"right of way", L"RR",
     L"building", L"bldg",
+    L"county", L"co",
+    L"trail", L"trail",
     /* TODO: Some of these are tricky and probably should only be
      * abbreviated when in post position, for example "Bridge Of The Gods"
      * should really stay intact and just disappear when there's not enough
@@ -205,32 +217,37 @@ static const wchar_t *abbrevs[] = {
      * blacklist "bridge of" as a phrase that only abbreviates to itself
      * and is not discardable.  */
     L"bridge", L"brdg",
+    L"crossing", L"xing",
+    L"pedestrian", L"ped",
     /* TODO: phrases below this line can not be omitted from the shortest
      * form, we need to account for this eventually.  */
     L"martin luther king", L"MLK",
     L"internal revenue service", L"IRS",
+    L"department", L"dept",
+    L"district of columbia", L"DC",
 
     /* Spanish */
-    L"calle", L"c.",
-    L"avenida", L"avda.", /* "Av." in some countries */
-    L"plaza", L"pza.", /* XXX: sometimes "Pl"? */
+    L"calle", L"c.", /* Or "c/" */
+    L"avenida", L"avda.", /* "Av." in Mexico */
+    L"plaza", L"pza.", /* Or "Pl." */
+    L"placita", L"placita",
     L"cuesta", L"cuesta",
-    L"paseo", L"pº",
+    L"paseo", L"pº", /* Or "p.º" */
     L"ronda", L"rda.",
     L"autovía", L"autovía",
     L"autopista", L"autopista",
     L"víal", L"víal",
     L"glorieta", L"gta.",
     L"puerta", L"pta.",
-    L"carretera", L"ctra.",
+    L"carretera", L"ctra.", /* "Carr." in Mexico */
     L"playa", L"playa",
     L"polideportivo", L"polideportivo",
     L"polígono industrial", L"pol. ind.",
     L"urbanización", L"urbanización",
-    L"barrio", L"barrio", /* XXX: sometimes "B."? */
-    L"parque", L"parque", /* XXX: sometimes "P." or "Pque."? */
-    L"ciudad", L"ciudad", /* XXX: sometimes "Cdad."? */
-    L"colonia", L"colonia", /* XXX: sometimes "Col."? */
+    L"barrio", L"barrio", /* Sometimes "B."? */
+    L"parque", L"parque", /* Sometimes "P." or "Pque."? */
+    L"ciudad", L"ciudad", /* Sometimes "Cdad."? */
+    L"colonia", L"colonia", /* Sometimes "Col."? */
     L"del", L"",
     L"de", L"",
     L"el", L"",
@@ -241,6 +258,7 @@ static const wchar_t *abbrevs[] = {
     L"poeta", L"poeta",
     L"cura", L"cura",
     L"obispo", L"obispo",
+    L"licenciado", L"ldo.",
     /* TODO: phrases below this line can not be omitted from the shortest
      * form, we need to account for this eventually.  */
     L"instituto de educación secundaria", L"IES",
@@ -251,7 +269,11 @@ static const wchar_t *abbrevs[] = {
     L"colegio público educación infantil y primaria", L"CEIP",
     L"colegio público de educación primaria e infantil", L"CEIP",
     L"colegio público educación primaria e infantil", L"CEIP",
-    L"buen retiro", L"retiro",
+    L"buen retiro", L"retiro", /* May be a case for a tag in the data */
+    L"facultad", L"facd.",
+    L"departamento", L"dpto.",
+    L"santa", L"sta.",
+    L"santo", L"sto.",
 
     /* German */
     /* TODO: German needs special treatment because the sub-words, in
