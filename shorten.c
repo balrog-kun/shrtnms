@@ -293,6 +293,16 @@ static const wchar_t *abbrevs[] = {
     L"майдан", L"майдан",
     L"площа", L"пл.",
     L"площадь", L"пл.",
+
+    /* Turkish */
+    L"cadde", L"cad.",
+    L"caddesi", L"cad.",
+    L"sokak", L"sok.",
+    L"sokağı", L"sok.",
+    L"bulvar", L"bul.",
+    L"bulvarı", L"bul.",
+    L"mahalle", L"mh.",
+    L"mahallesi", L"mh.",
 };
 
 /*
