@@ -281,7 +281,7 @@ static const wchar_t *abbrevs[] = {
     L"straße", L"str.",
     L"strasse", L"str.",
     L"weg", L"weg",
-    L"hauptbanhof", L"hbf",
+    L"hauptbahnhof", L"hbf",
 
     /* Russian & Ukrainian */
     L"проспе́кт", L"пр.",
