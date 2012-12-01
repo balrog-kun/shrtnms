@@ -226,6 +226,16 @@ static const wchar_t *abbrevs[] = {
     L"internal revenue service", L"IRS",
     L"department", L"dept",
     L"district of columbia", L"DC",
+    L"first", L"1st",
+    L"second", L"2nd",
+    L"third", L"3rd",
+    L"fourth", L"4th",
+    L"fifth", L"5th",
+    L"sixth", L"6th",
+    L"seventh", L"7th",
+    L"eighth", L"8th",
+    L"ninth", L"9th",
+    L"tenth", L"10th",
 
     /* Spanish */
     L"calle", L"c.", /* Or "c/" */
