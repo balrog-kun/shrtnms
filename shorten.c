@@ -66,8 +66,14 @@ static const wchar_t *abbrevs[] = {
     L"marszałka", L"marsz.",
     L"kapitana", L"kpt.",
     L"porucznika", L"por.",
+    L"podporucznika", L"ppor.",
     L"pułkownika", L"płk.",
+    L"podpułkownika", L"ppłk.",
     L"majora", L"maj.",
+    L"hetmana", L"hetm."
+    L"kanclerza", L"kanc."
+    L"admirała", L"adm."
+    L"komandora", L"kmdr."
     L"imienia", L"im.",
     L"numer", L"nr",
     L"kościół", L"kościół",
@@ -333,6 +339,7 @@ static const wchar_t *given_names[] = {
     L"Agnieszki",
     L"Ahmeda",
     L"Alberta",
+    L"Albina",
     L"Aleksandra",
     L"Aleksandry",
     L"Alfreda",
@@ -389,6 +396,7 @@ static const wchar_t *given_names[] = {
     L"Darii",
     L"Dariusza",
     L"Dawida",
+    L"Dezyderego",
     L"Dionizego",
     L"Dominika",
     L"Dominiki",
@@ -473,6 +481,7 @@ static const wchar_t *given_names[] = {
     L"Jędrzeja",
     L"Joahima",
     L"Johana",
+    L"Johna",
     L"Jonasza",
     L"Jolanty",
     L"Józefa",
@@ -659,6 +668,7 @@ static const wchar_t *given_names[] = {
     L"Witolda",
     L"Władysława",
     L"Włodzimierza",
+    L"Wojciecha",
     L"Wolfganga",
     L"Woodrowa",
     L"Zachariasza",
