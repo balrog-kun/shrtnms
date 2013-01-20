@@ -85,9 +85,11 @@ static const wchar_t *abbrevs[] = {
     L"pasaż", L"pasaż",
     L"skwer", L"skwer",
     L"ścieżka", L"ścieżka",
+    L"trasa", L"trasa",
     L"pod wezwaniem", L"pw.",
     L"matki boskiej", L"MB",
     L"najświętszej maryi panny", L"NMP",
+    L"najświętszej marii panny", L"NMP",
     L"kanał", L"kan.",
     L"góra", L"g.",
     L"dworzec", L"dworzec",
@@ -95,11 +97,14 @@ static const wchar_t *abbrevs[] = {
     /* TODO: when skipping "nad" (or German "am") skip until end of string */
     L"nad", L"n.",
     L"główny", L"gł.",
-    L"główna", L"gł.", /* TODO: don't touch if first word */
+    L"główna", L"gł.", /* TODO: don't touch if the only word */
+    L"główne", L"gł.",
     L"wschodni", L"wsch.",
-    L"wschodnia", L"wsch.", /* TODO: don't touch if first word */
+    L"wschodnia", L"wsch.", /* TODO: don't touch if the only word */
+    L"wschodnie", L"wsch.",
     L"zachodni", L"zach.",
-    L"zachodnia", L"zach.", /* TODO: don't touch if first word */
+    L"zachodnia", L"zach.", /* TODO: don't touch if the only word */
+    L"zachodnie", L"zach.",
     L"pierwszy", L"I",
     L"pierwsza", L"I",
     L"pierwsze", L"I",
@@ -110,22 +115,22 @@ static const wchar_t *abbrevs[] = {
     L"trzecia", L"III",
     L"trzecie", L"III",
     L"mazowiecki", L"maz.",
-    L"mazowiecka", L"maz.",
+    L"mazowiecka", L"maz.", /* TODO: don't touch if the only word */
     L"mazowieckie", L"maz.",
     L"wielkopolski", L"wlkp.",
-    L"wielkopolska", L"wlkp.",
+    L"wielkopolska", L"wlkp.", /* TODO: don't touch if the only word */
     L"wielkopolskie", L"wlkp.",
     L"śląski", L"śl.",
     L"śląska", L"śl.",
     L"śląskie", L"śl.",
     L"pomorski", L"pom.",
-    L"pomorska", L"pom.", /* TODO: don't touch if first word */
+    L"pomorska", L"pom.", /* TODO: don't touch if the only word */
     L"pomorskie", L"pom.",
     L"górny", L"g.",
-    L"górna", L"g.", /* TODO: don't touch if first word */
+    L"górna", L"g.", /* TODO: don't touch if the only word */
     L"górne", L"g.",
     L"dolny", L"d.",
-    L"dolna", L"d.", /* TODO: don't touch if first word */
+    L"dolna", L"d.", /* TODO: don't touch if the only word */
     L"dolne", L"d.",
     L"kolonia", L"kol.",
     L"miasto stołeczne", L"m.st.",
@@ -168,6 +173,7 @@ static const wchar_t *abbrevs[] = {
     L"błogosławionej", L"bł.",
     L"błogosławionych", L"bł.",
     L"batalionu", L"baonu",
+    L"matki teresy z kalkuty", L"Matki Teresy",
 
     /* English */
     L"north", L"n",
@@ -440,6 +446,7 @@ static const wchar_t *given_names[] = {
     L"Haliny",
     L"Hanny",
     L"Hektora",
+    L"Heleny",
     L"Helmuta",
     L"Henryka",
     L"Herakliusza",
@@ -577,6 +584,7 @@ static const wchar_t *given_names[] = {
     L"Norberta",
     L"Ofelii",
     L"Olafa",
+    L"Oleńki",
     L"Olgi",
     L"Olgierda",
     L"Oliwii",
@@ -666,6 +674,7 @@ static const wchar_t *given_names[] = {
     L"Wisławy",
     L"Wita",
     L"Witolda",
+    L"Wlastimila",
     L"Władysława",
     L"Włodzimierza",
     L"Wojciecha",
