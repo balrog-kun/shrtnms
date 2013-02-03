@@ -67,13 +67,15 @@ static const wchar_t *abbrevs[] = {
     L"kapitana", L"kpt.",
     L"porucznika", L"por.",
     L"podporucznika", L"ppor.",
-    L"pułkownika", L"płk.",
+    L"pułkownika", L"płk.", /* No period according to the dictionaries */
     L"podpułkownika", L"ppłk.",
-    L"majora", L"maj.",
-    L"hetmana", L"hetm."
-    L"kanclerza", L"kanc."
-    L"admirała", L"adm."
-    L"komandora", L"kmdr."
+    L"majora", L"maj.", /* No period according to the dictionaries */
+    L"hetmana", L"hetm.",
+    L"kanclerza", L"kanc.",
+    L"admirała", L"adm.",
+    L"kontradmirała", L"kadm.",
+    L"wiceadmirała", L"wadm.",
+    L"komandora", L"kmdr.", /* No period according to the dictionaries */
     L"imienia", L"im.",
     L"numer", L"nr",
     L"kościół", L"kościół",
@@ -680,6 +682,7 @@ static const wchar_t *given_names[] = {
     L"Wojciecha",
     L"Wolfganga",
     L"Woodrowa",
+    L"Xawerego",
     L"Zachariasza",
     L"Zbigniewa",
     L"Zbyszka",
