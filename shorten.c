@@ -76,6 +76,7 @@ static const wchar_t *abbrevs[] = {
     L"kontradmirała", L"kadm.",
     L"wiceadmirała", L"wadm.",
     L"komandora", L"kmdr.", /* No period according to the dictionaries */
+    L"rotmistrza", L"rtm.",
     L"imienia", L"im.",
     L"numer", L"nr",
     L"kościół", L"kościół",
@@ -488,7 +489,7 @@ static const wchar_t *given_names[] = {
     L"Jeremiego",
     L"Jerzego",
     L"Jędrzeja",
-    L"Joahima",
+    L"Joachima",
     L"Johana",
     L"Johna",
     L"Jonasza",
