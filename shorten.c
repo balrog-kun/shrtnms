@@ -47,6 +47,10 @@
  * Note that the input is always assumed to be unabbreviated.  If there are
  * already abbreviations in the input, the "stem" output will include them,
  * while the idea is that it shouldn't.
+ *
+ * TODO: The arrays below mix languages together, we really really should
+ * take the language code as a call argument and only apply processing
+ * specific to that language.
  */
 static const wchar_t *abbrevs[] = {
     /* Polish */
@@ -757,6 +761,13 @@ static const wchar_t *given_names[] = {
     L"Żanety",
 };
 
+static const wchar_t *digraphs[] = {
+    /* Polish - only those that are in use in given_names */
+    L"Ch",
+    L"Cz",
+    L"Sz",
+};
+
 static locale_t l;
 
 void utf_init(void)
@@ -784,7 +795,7 @@ void shorten_name(const char *name,
     wchar_t *cur_short_word, *cur_shortest_word;
 
     int unabbrev = 0;
-    int i, len, new_len, capital;
+    int i, j, len, new_len, capital;
 
     if (!name)
         return;
@@ -883,9 +894,18 @@ void shorten_name(const char *name,
 		if (!cur_word[len])
 		    continue;
 
+		new_len = 1;
+		for (j = 0; j < ARRAY_SIZE(digraphs); j ++)
+		    if (!wcsncasecmp_l(digraphs[j], cur_word,
+			    wcslen(digraphs[j]), l)) {
+			new_len = wcslen(digraphs[j]);
+			break;
+		    }
+
 		cur_word += len;
 
-		*cur_short_word++ = given_names[i][0];
+		for (j = 0; j < new_len; j ++)
+		    *cur_short_word++ = given_names[i][j];
 		*cur_short_word++ = L'.';
 
 		/*
