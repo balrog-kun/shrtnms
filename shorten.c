@@ -815,8 +815,14 @@ void shorten_name(const char *name,
     cur_short_word = w_short_name;
     cur_shortest_word = w_shortest_name;
     while (1) {
-        while (*cur_word && !iswalnum_l(*cur_word, l))
-	    *cur_short_word ++ = *cur_shortest_word ++ = *cur_word ++;
+	while (*cur_word && !iswalnum_l(*cur_word, l)) {
+	    if (cur_short_word > w_short_name || !iswspace_l(*cur_word, l))
+		*cur_short_word ++ = *cur_word;
+	    if (cur_shortest_word > w_shortest_name ||
+		    !iswspace_l(*cur_word, l))
+		*cur_shortest_word ++ = *cur_word;
+	    *cur_word ++;
+	}
 
 	if (!*cur_word)
 	    break;
