@@ -815,14 +815,21 @@ void shorten_name(const char *name,
     cur_short_word = w_short_name;
     cur_shortest_word = w_shortest_name;
     while (1) {
-	while (*cur_word && !iswalnum_l(*cur_word, l)) {
-	    if (cur_short_word > w_short_name || !iswspace_l(*cur_word, l))
-		*cur_short_word ++ = *cur_word;
-	    if (cur_shortest_word > w_shortest_name ||
-		    !iswspace_l(*cur_word, l))
-		*cur_shortest_word ++ = *cur_word;
-	    *cur_word ++;
-	}
+	while (*cur_word && !iswalnum_l(*cur_word, l))
+	    if (iswspace_l(*cur_word, l)) {
+		/*
+		 * Avoid leading or consecutive whitespace when something gets
+		 * replaced with "".
+		 */
+		if (cur_short_word > w_short_name &&
+			!iswspace_l(cur_short_word[-1], l))
+		    *cur_short_word ++ = *cur_word;
+		if (cur_shortest_word > w_shortest_name &&
+			!iswspace_l(cur_shortest_word[-1], l))
+		    *cur_short_word ++ = *cur_word;
+	        *cur_word ++;
+	    } else
+	        *cur_short_word ++ = *cur_shortest_word ++ = *cur_word ++;
 
 	if (!*cur_word)
 	    break;
@@ -859,21 +866,6 @@ void shorten_name(const char *name,
 		}
 
 		cur_short_word += new_len;
-
-		/*
-		 * Avoid excess whitespace in short and shortest
-		 * when a word is replaced with "".
-		 * TODO: this may require more complicated logic to get
-		 * the corner cases right.
-		 */
-		if (new_len == 0) {
-		    if (cur_short_word > w_short_name &&
-		            iswspace_l(cur_short_word[-1], l))
-			cur_short_word --;
-		    if (cur_shortest_word > w_shortest_name &&
-		            iswspace_l(cur_shortest_word[-1], l))
-			cur_shortest_word --;
-	        }
 
                 /*if (new_len != len)*/
 		break;
@@ -913,16 +905,6 @@ void shorten_name(const char *name,
 		for (j = 0; j < new_len; j ++)
 		    *cur_short_word++ = given_names[i][j];
 		*cur_short_word++ = L'.';
-
-		/*
-		 * Avoid excess whitespace in shortest when a word is
-		 * replaced with "".
-		 * TODO: this may require more complicated logic to get
-		 * the corner cases right.
-		 */
-		if (cur_shortest_word > w_shortest_name &&
-		        iswspace_l(cur_shortest_word[-1], l))
-		    cur_shortest_word --;
 
 		break;
 	    }
