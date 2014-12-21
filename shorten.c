@@ -273,9 +273,9 @@ static const wchar_t *abbrevs[] = {
     L"ninth", L"9th",
     L"tenth", L"10th",
 
-    /* Spanish */
-    L"calle", L"c.", /* Or "c/" */
-    L"avenida", L"avda.", /* "Av." in Mexico */
+    /* Spanish - Spain */
+    L"calle", L"c.", /* Or "c/", also "Ca" and "Cll" in Peru */
+    L"avenida", L"avda.", /* "Av." in Mexico, Peru */
     L"plaza", L"pza.", /* Or "Pl." */
     L"placita", L"placita",
     L"cuesta", L"cuesta",
@@ -306,6 +306,7 @@ static const wchar_t *abbrevs[] = {
     L"cura", L"cura",
     L"obispo", L"obispo",
     L"licenciado", L"ldo.",
+    /* General - Gral. in Spain, Gen. in Peru */
     /* TODO: phrases below this line can not be omitted from the shortest
      * form, we need to account for this eventually.  */
     L"instituto de educación secundaria", L"IES",
@@ -321,6 +322,12 @@ static const wchar_t *abbrevs[] = {
     L"departamento", L"dpto.",
     L"santa", L"sta.",
     L"santo", L"sto.",
+
+    /* Spanish - Peru - in addition to things that are above */
+    L"pasaje", L"pj.", /* Sometimes "Psje." */
+    L"jirón", L"jr.",
+    L"instituto de educación", L"IE",
+    L"instituto educación", L"IE",
 
     /* German */
     /* TODO: German needs special treatment because the sub-words, in
